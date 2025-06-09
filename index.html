@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cascadia+Mono:ital,wght@0,200..700;1,200..700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+Display:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cascadia+Mono:ital,wght@0,200..700;1,200..700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+Display:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+  // Add animate class to portfolio items for initial animation
+  const portfolioItems = document.querySelectorAll('.portfolio-item');
+            
+  // Animate portfolio items on load
+  portfolioItems.forEach((item, index) => {
+    setTimeout(() => {
+      item.classList.add('animate');
+    }, index * 200);
+  });
+
+  // Add click event listeners to portfolio items
+  portfolioItems.forEach(item => {
+    item.addEventListener('click', function(e) {
+    // Prevent event bubbling when clicking on extra images
+      if (e.target.closest('.extra-images img')) {
+        return;
+      }
+
+      const extraImages = this.querySelector('.extra-images');
+                    
+      // Toggle the show class
+      extraImages.classList.toggle('show');
+      this.classList.toggle('expanded');
+    });
+  });
+
+  // Optional: Close extra images when clicking outside
+  document.addEventListener('click', function(e) {
+    if (!e.target.closest('.portfolio-item')) {
+        portfolioItems.forEach(item => {
+            const extraImages = item.querySelector('.extra-images');
+            extraImages.classList.remove('show');
+            item.classList.remove('expanded');
+        });
+    }
+  });
+});
+    </script>
+</head>
+<body>
+    <!-- Home Page -->
+    <div class="home"> 
+        <div class="background-logo"></div>
+        <div class="top"> 
+            <img class="logo" src="IVOIV-white.png">
+            <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+            <label for="menu-toggle" class="menu">
+                <div class="a"></div>
+                <div class="a"></div>
+                <div class="a"></div>
+            </label>
+            <div class="list">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#service" id="service">Services</a></li>
+                    <li><a href="#work" id="work">Work</a></li>
+                    <li><a href="#about" id="about">About</a></li>
+                    <li><a href="#contact" id="contact">Contact Us</a></li>
+                </ul>
+        </div>
+    </div>
+
+    <div class="main">
+        <div class="home-text">
+            <h1 class="main-text">
+                Innovate. Create. Evolve.
+            </h1>
+            <p class="second-text">
+                Create visuals from concept to final frame.
+            </p>
+            <p class="third-text">
+                Partner with <span>IVOIV</span> to amplify your brand <br/>
+                and captivate your audience with <br/>
+                innovative campaigns.
+            </p>
+            <button id="get-started">Get Started</button>
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- Service Page -->
+    <div class="service">
+        <h1 class="service-text">Our Services</h1>
+        <div class="the-services">
+            <div class="service-item">
+                <h2>Concept Planning</h2>
+                <p>We help you brainstorm and develop innovative concepts tailored to your brand.</p>
+            </div>
+            <div class="service-item">
+                <h2>Poster Design</h2>
+                <p>Eye-catching poster designs that communicate your message effectively.</p>
+            </div>
+            <div class="service-item">
+                <h2>Styling</h2>
+                <p>Professional styling services to enhance your brand's visual identity.</p>
+            </div>
+            <div class="service-item">
+                <h2>Photoshoot</h2>
+                <p>High-quality photoshoots that capture the essence of your brand.</p>
+            </div>
+            <div class="service-item">
+                <h2>Mascot (Avatar Creation from model)</h2>
+                <p>Custom mascot creation to represent your brand in a fun and engaging way.</p>
+            </div>
+            <div class="service-item">
+                <h2>Advertisement Video</h2>
+                <p>Compelling advertisement videos that tell your brand's story.</p>
+            </div>
+            <div class="service-item">
+                <h2>Narrative Campaign Booklet (Mini Zine or Story PDF)</h2>
+                <p>Creative booklets that narrate your brand's journey and campaigns.</p>
+            </div>
+            <div class="service-item">
+                <h2>Full Brand Identity Set (Logo, Typeface, Color Palette, Visual Guide)</h2>
+                <p>Comprehensive branding solutions to establish a strong identity.</p>
+            </div>
+            <div class="service-item">
+                <h2>Interactive Social Media Mockups (Feed, Stories, TikTok ideas)</h2>
+                <p>Engaging social media mockups to visualize your online presence.</p>
+            </div>
+            <div class="service-item">
+                <h2>Product Packaging or Merch Design Concept</h2>
+                <p>Creative packaging designs that stand out on the shelves.</p>
+            </div>
+            <div class="service-item">
+                <h2>AR Filter Concept Mockup</h2>
+                <p>Innovative AR filter concepts to enhance user engagement.</p>
+            </div>
+            <div class="service-item">
+                <h2>Behind-the-Scenes or Mood Video</h2>
+                <p>Insightful videos that showcase the creative process behind your brand.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Work Page -->
+    <div class="work">
+        <h1 class="work-text">Our Work (Portfolio)</h1>
+        <div class="portfolio">
+            <div class="portfolio-item">
+                <img src="ren noir logo colored-01-01-01.png" id="freya">
+                <p>IVOIV x FREYA</p>
+                <div class="extra-images">
+                    <img src="FSD07298 retouched 2.jpg">
+                    <img src="FSD07312 retouched.jpg">
+                    <img src="FSD07320 retouched 2.jpg">
+                    <img src="FSD07321 retouched 2.jpg">
+                    <img src="FSD07386 retouched.jpg">
+                    <img src="FSD07399 retouched.jpg">
+                    <img src="FSD07484 retouched.jpg" style="width: 200%;">
+                    <img src="FSD07496 retouched.jpg">
+                    <img src="FSD07528 retouched.jpg">
+                    <img src="FSD07549 retouched 2.jpg">
+                    <img src="FSD07577 retouched.jpg">
+                    <img src="FSD07618 retouched.jpg">
+                </div>
+            </div>
+            <div class="portfolio-item except">
+                <img src="IVOIV magazine cover.jpg" id="magazine">
+                <p>5чcrøи : Echoes of Survival</p>
+                <div class="extra-images">
+                    <img src="sycron 1.png">
+                    <img src="sycron 2.png">
+                    <img src="sycron 3.png">
+                    <img src="Untitled-4.png">
+                    <img src="sycron 5.png">
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <img src="poster cover.jpg" id="mockup">
+                <p>IVOIV Poster</p>
+                <div class="extra-images">
+                    <img src="Bites of Culture-01.jpg">
+                    <img src="Bites of Culture-02.jpg">
+                    <img src="Bites of Culture-03.jpg">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Page -->
+    <div class="about">
+        <h1 class="about-text">About Us</h1>
+        <div class="about-details">
+            <p id="about-paragraph"><span>IVOIV</span> is a next-gen creative studio based in Asia, 
+                blending fashion styling, AI aesthetics, and visual storytelling.
+                From concept development to production and post-editing, 
+                We deliver bold campaigns that stand out.
+                We work with brands, musicians, and startups who want to evolve 
+                their image and push creative boundaries.
+            </p>
+        </div>
+    </div>
+
+    <!-- Contact Page -->
+    <div class="contact">
+        <h1 class="contact-text">Contact Us</h1>
+        <div class="contact-details">
+            <div class="insta">
+                <img src="instagram-png-logo-transparent.png" id="insta">
+                <a href="https://www.instagram.com/404.earth.not.found/">
+                <p>@ 404.earth.not.found</p>
+                </a>
+            </div>
+            <div class="gmail">
+                <img src="Gmail-Logo-2013-2020.png" id="gmail">
+                <p>iceivoiv@gmail.com</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2025 IVOIV Advertising Agency. All rights reserved.
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
